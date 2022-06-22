@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
+        <!-- fonts and Icons -->
+        <script src="https://kit.fontawesome.com/35762febbc.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Kdam+Thmor+Pro&family=Koulen&family=Lobster&family=Macondo&family=Merriweather:ital,wght@1,300&family=Montserrat:ital,wght@1,200&family=Oswald&family=Pacifico&family=Sacramento&display=swap" rel="stylesheet">
+
+         <!-- My Stylesheets -->
+        <link rel="stylesheet" href="./styles/style.css"/>
+        <link rel="stylesheet" href="./styles/items.css"/>
+        <title>Items</title>
+</head>
+<body>
+
+    <section id="gadgets">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#" id="brand">ChiloSales</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link " href="/#contact">Contact</a>
+                  <% if (auth) { %>
+                    <a class="nav-link " href="/logout">Logout </a>
+                  <% }else{ %>
+                      <a class="nav-link " href="/login">Login </a>
+                  <% } %> 
+                  
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
+
+        <div class="gadgetTxt">
+            <h1>Gadgets Available</h1>
+        </div>
+
+        <hr/>
+
+       
+      <section id="stock" class="contaniner-fluid">
+        <div class="row">
+            <% product.forEach(product => { %>
+                <% if (product.type.toLowerCase() == "gadget"){ %>
+                    <div class="pricing-col col-lg-4 col-md-6">
+    
+                        <div class="card" id="card">
+                            <h3 class="card-header"> <%=product.name %>  </h3>
+                        
+            
+                            <img src="data:<%= product.image.contentType%>;base64,<%= product.image.data.toString('base64')%>" alt="<%=product.name%> " class="card-img-top" id="card-image"/>
+                
+                            <div class="card-body">
+                                <h3 class="card-title">Price: K<%=product.price %> </h3>
+                                <p class="card-text"><%=product.decription %> </p>
+                                <a href="/purchase/<%=product._id %> " class="btn btn-outline-dark btn-lg col-12">Purchase Now</a>
+                
+                        </div>
+                      </div>
+                      </div>
+                 
+                <% } %>
+  
+            <% }) %>
+          </div>
+      
+          </section>
+
+
+
+
+          <div class="gadgetTxt">
+            <h1>Accessories Available</h1>
+        </div>
+
+        <hr/>
+
+  
+      <section id="stock" class="contaniner-fluid">
+        <div class="row">
+            <% product.forEach(product => { %>
+                
+                <% if (product.type.toLowerCase() == "accessory"){ %>
+                    <div class="pricing-col col-lg-4 col-md-6">
+    
+                        <div class="card" id="card">
+                            <h3 class="card-header"> <%=product.name %>  </h3>
+                        
+            
+                            <img src="data:<%= product.image.contentType%>;base64,<%= product.image.data.toString('base64')%>" alt="<%=product.name%> " class="card-img-top" id="card-image"/>
+                
+                            <div class="card-body">
+                                <h3 class="card-title">Price: K<%=product.price %> </h3>
+                                <p class="card-text"><%=product.decription %> </p>
+                                <a href="/purchase/<%=product._id %> " class="btn btn-outline-dark btn-lg col-12">Purchase Now</a>
+                
+                        </div>
+                      </div>
+                      </div>
+                 
+                <% } %>
+  
+            <% }) %>
+          </div>
+      
+          </section>
+
+          <section id="sale" class="container-fluid">
+            <h1>Are you selling? </h1>
+            <p> <em>We make it possible for you to sale your Gadgets and Accessories. To add a listing, simply</em><a class="btn btn-link" href="/add">Click Here</a> </p>
+
+          </section>
+       
+    </section>
+
+    <footer id="contact" class="container-fluid" name="contact" >
+        
+        <a href="https://facebook.com" data-toggle="tooltip" data-placement="top" title="Connect to facebook"><i class="fa-brands fa-facebook"></i></a> 
+         <a href="https://twitter.com" data-toggle="tooltip" data-placement="top" title="Connect to twitter" ><i class="icons fa-brands fa-twitter"></i></a> 
+          <a href="https://instagram.com" data-toggle="tooltip" data-placement="top" title="Connect to Instagram" ><i class="icons fa-brands fa-instagram"></i></a> 
+          <a href="https://web.whatsapp.com" data-toggle="tooltip" data-placement="top" title="Connect to Whatsapp"><i class="icons fa-brands fa-whatsapp"></i></a>
+     <p>©MobileHub 2022</p>
+ </footer>
+
+
+    
+       
+    </section>
+
+    
+
+
+   
+    
+</body>
+
+<script src="./Javascript/jsFile.js"></script>
+</html>

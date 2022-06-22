@@ -1,0 +1,19 @@
+.gadgetTxt, .acceTxt{
+    text-align: center;
+    padding: 3% 0 0 0;
+    font-family: 'Lobster', cursive;
+}
+
+#stock{
+    padding-bottom: 3%;
+}
+
+
+#sale{
+    padding-left: 3%;
+    padding-bottom: 2%;
+}
+
+#sale>h1{
+    font-family: 'Lobster', cursive;
+}

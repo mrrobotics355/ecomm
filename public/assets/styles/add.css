@@ -1,0 +1,24 @@
+input{
+    display: block;
+    margin-bottom: 1%;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 3%;
+    padding: 5px;
+    
+
+}
+
+.myForm{
+
+    margin: auto;
+    width: 50%;
+    padding-top: 5%;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+footer{
+    padding: 2%;
+
+}

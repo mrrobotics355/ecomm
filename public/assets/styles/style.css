@@ -1,0 +1,167 @@
+
+
+
+
+
+
+/* My Nav */
+.navbar-brand{
+    font-family: 'Pacifico', cursive;
+   
+}
+
+#brand{
+    color: #DF7861;
+}
+
+
+
+
+/* welcome Section */
+
+.welcomeImage3{
+    height: 50%;
+    width: 30vw;
+    cursor: pointer; 
+    transition: 2s; 
+    
+}
+
+.welcomeImage3:hover{
+    transform: rotate(-360deg);
+}
+
+.welcomeImage1{
+    cursor: pointer;
+    height: 65vh;
+    width: 40vw;
+}
+
+.welcomeImage2{
+    transform: rotate(30deg);
+    cursor: pointer;
+}
+
+#welcomeImageSection{
+    padding: 4%;
+}
+
+
+/* caraousel */
+
+#carImage{
+    height: 75vh;
+    object-fit: contain;
+}
+
+
+
+
+
+/* Stock */
+
+.pricing-col{
+    padding: 1%;
+    transition: 1s;
+    
+}
+
+
+
+
+#card-image{
+    height: 30vh;
+    width: 100%;
+    object-fit: contain;
+}
+
+.more{
+    text-align: center;
+    padding-bottom: 5%;
+    
+}
+
+#stockTitleTxt{
+    font-family: 'Merriweather', serif;
+}
+
+.stockTitle{
+    text-align: center;
+    padding:2% 0 3% 0;
+}
+
+#stock{
+    background-image: linear-gradient(to bottom right, #F9F9F9, #FFFFFF, #F6FBF4);
+}
+
+
+
+/* footer */
+
+#contact{
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 3%;
+    background-color: #F2F2F2;
+}
+
+.icons{
+    padding-left: 10px;
+    cursor: pointer;
+    padding-bottom: 1%;
+    color: gray;
+}
+
+.fa-brands{
+    color: gray;
+}
+
+#myButton{
+    margin-bottom: 2%;
+}
+
+
+
+
+
+/* Responsive */
+
+
+@media only screen and (max-width: 1024px) {
+    .welcomeImage3{
+        padding-left: 5%;
+        height: 40%;
+        width: 70%;
+        transform: rotate(20deg);
+        padding-bottom: 20px;
+        margin-left: 20%;
+        transition: 1s;
+    
+    }
+
+    .welcomeImage3:hover{
+        transform: rotate(360deg);
+    }
+    
+    .welcomeImage2{
+        display: none;
+    }
+    
+    .welcomeImage1{
+        display: none;
+    }
+
+    
+
+    .pricing-col{
+        padding: 3%;
+    } 
+    
+}
+
+.card-text{
+    text-align: justify;
+}
+
+
+
